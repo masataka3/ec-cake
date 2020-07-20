@@ -2,9 +2,11 @@ class UsersController < ApplicationController
 	def show
 		@user =current_user
 	end
+
 	def edit
 		@user = current_user
 	end
+
 	def update
 		@user = current_user
 	  if @user.update(user_params)
@@ -12,6 +14,14 @@ class UsersController < ApplicationController
 	  else render "edit"
 	  end
 	end
+
+	def unsubscribed
+	end
+
+	def withdraw
+	end
+
+
 
 
 	private
