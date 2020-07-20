@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
 
+
+  devise_for :admins, controllers: {
+  sessions: 'admins/sessions'
+}
+  namespace :admin do
+   resources :products
+   resources :genres
+   resources :orders, only: [:index,:show,:update]
+   resources :users, only: [:index, :show, :edit,:update]
+   get 'homes/top'
+  end
 #user_routes
   devise_for :users
   root 'homes#top'
