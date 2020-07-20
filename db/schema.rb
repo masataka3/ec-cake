@@ -10,13 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_20_070759) do
+ActiveRecord::Schema.define(version: 2020_07_20_100340) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "user_id"
     t.string "address"
     t.string "post_code"
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cart_products", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.integer "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_products", force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "product_id"
+    t.integer "price_tax_inclued"
+    t.integer "number"
+    t.integer "production_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "postage"
+    t.integer "amount_prace"
+    t.integer "payment_method"
+    t.integer "order_status"
+    t.string "address"
+    t.string "name"
+    t.string "post_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer "genre_id"
+    t.string "image_id"
+    t.integer "price_tax_exclued"
+    t.text "detail"
+    t.string "name"
+    t.integer "selling_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
