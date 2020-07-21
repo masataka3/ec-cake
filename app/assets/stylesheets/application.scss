@@ -16,6 +16,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.body{
+	margin-bottom: 100px;
+}
+ header{
+	height: 120px;
+ 	background-color:black;
+}
 .menu{
 	list-style: none;
 }
@@ -30,8 +37,8 @@
 
 #hm-icon{
   position: fixed;
-  right: 20px;
-  top: 20px;
+  right: 30px;
+  top: 35px;
   z-index: 10;
 }
 .menu-trigger,
@@ -98,3 +105,28 @@
   text-decoration: none;
   font-weight: bold;
 }
+
+
+.name_box{
+	display: flex;
+	margin:0 auto;
+}
+.name_box > div{
+	margin-right: 20px;
+}
+.name_box_kana{
+	display: flex;
+	margin:0 auto;
+}
+.name_box_kana > div{
+	margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+

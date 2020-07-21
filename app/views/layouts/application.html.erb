@@ -17,29 +17,7 @@
 
   </head>
   <body>
-    <div class="body">
-      <div id="sp-menu">
-        <h2>MENU</h2>
-        <ul>
-          <%if user_signed_in? %>
-            <li class="menu"><a href="#"><%= link_to " Logout", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out" %></a></li>
-          <% else %>
-            <li class="menu"><a href="#"><%= link_to 'Home',root_path,class: 'glyphicon glyphicon-home home' %></a></li>
-            <li class="menu"><a href="#"><%= link_to ' About us', homes_about_path, class: "glyphicon glyphicon-link about" %></a></li>
-            <li class="menu"><a href="#"><%= link_to ' Sign up', new_user_registration_path, class: "glyphicon glyphicon-check" %></a></li>
-            <li class="menu"><a href="#"><%= link_to ' Login', new_user_session_path, class: "glyphicon glyphicon-log-in"%></a></li>
-          <% end %>
-        </ul>
-      </div>
-
-      <div id="hm-icon">
-      <a class="menu-trigger" href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-      </div>
-    </div>
+    <%= render "layouts/header"%>
     <%= yield %>
   </body>
 </html>
