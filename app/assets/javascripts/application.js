@@ -15,3 +15,18 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+$(document).on('turbolinks:load', function() {
+    $('.slide').slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 1000,
+    });
+});
+
+$(document).on('turbolinks:load', function() {
+  $('.menu-trigger').on('click', function(event) {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    event.preventDefault();
+  });
+});
